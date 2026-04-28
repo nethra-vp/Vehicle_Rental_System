@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DriveFlow | Premium Vehicle Rental System
 
-## Getting Started
+DriveFlow is a modern, full-stack vehicle rental platform designed for seamless car browsing, booking, and fleet management.
 
-First, run the development server:
+**Live Demo:** [https://vehicle-rental-system-drive-flow.vercel.app/](https://vehicle-rental-system-drive-flow.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### For Users
+- **Modern Fleet Browser**: Explore premium vehicles with filters for location and price.
+- **Seamless Booking**: Real-time availability checks and instant booking flow.
+- **My Bookings**: Manage your active rentals and view your journey history.
+- **Simulated Payments**: Integrated mock payment gateway for a complete experience.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### For Admins
+- **Interactive Dashboard**: Track total revenue, fleet size, and active bookings at a glance.
+- **Fleet Management**: Full CRUD operations to add, edit, or remove vehicles from the inventory.
+- **Booking Records**: Monitor all customer reservations and update their status (Confirmed/Completed/Cancelled).
+- **Revenue Tracking**: Automated financial reporting that updates in real-time.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+- **Frontend**: Next.js 15 (App Router), Tailwind CSS, Lucide Icons
+- **Backend**: Next.js Server Actions & API Routes
+- **Database**: MongoDB Atlas with Mongoose ODM
+- **Deployment**: Vercel
 
-To learn more about Next.js, take a look at the following resources:
+## ⚙️ Local Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/nethra-vp/Vehicle_Rental_System.git
+   cd vehicle-rental-system
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. **Configure Environment Variables**:
+   Create a `.env.local` file and add your MongoDB connection string:
+   ```env
+   MONGODB_URI=your_mongodb_atlas_uri
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Seed the Database**:
+   ```bash
+   node seed.js
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
