@@ -31,9 +31,10 @@ export default function AdminDashboard() {
 
       if (vData.success && bData.success && pData.success) {
         setStats({
-          totalRevenue: pData.data.reduce((acc, p) => 
-            p.bookingId?.status !== 'cancelled' ? acc + p.amount : acc, 0
-          ),
+          totalRevenue: pData.data.reduce((acc, p) => {
+            if (p.bookingId?.status === 'completed') return acc + p.amount;
+            return acc;
+          }, 0),
           totalVehicles: vData.data.length,
           totalBookings: bData.data.length,
           activeBookings: bData.data.filter(b => b.status === 'confirmed').length
