@@ -1,6 +1,8 @@
-import { authMiddleware } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
-export default authMiddleware();
+export function middleware(request) {
+  return NextResponse.next();
+}
 
 export const config = {
   matcher: [
