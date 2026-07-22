@@ -44,7 +44,7 @@ export default function BookingModal({ vehicle, onClose, onSuccess }) {
       }
 
       // 2. Simulate Payment
-      await fetch('/api/payments', {
+      const paymentRes = await fetch('/api/payments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -54,6 +54,13 @@ export default function BookingModal({ vehicle, onClose, onSuccess }) {
           status: 'success',
         }),
       });
+
+      const paymentData = await paymentRes.json();
+      if (!paymentData.success) {
+        setError(paymentData.error || 'Payment failed. Please try again.');
+        setLoading(false);
+        return;
+      }
 
       setStep(3); // Show success
     } catch (err) {

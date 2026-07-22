@@ -3,6 +3,7 @@ import dbConnect from '@/lib/db';
 import Booking from '@/models/Booking';
 import { isVehicleAvailable, calculateTotalPrice } from '@/lib/utils';
 import Vehicle from '@/models/Vehicle';
+import User from '@/models/User';
 
 export async function GET(request) {
   try {

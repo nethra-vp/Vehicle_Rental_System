@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/db';
 import Payment from '@/models/Payment';
-
+import Booking from '@/models/Booking';
+import Vehicle from '@/models/Vehicle';
 export async function GET(request) {
   try {
     await dbConnect();
