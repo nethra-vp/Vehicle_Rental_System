@@ -1,9 +1,11 @@
-import AuthForm from '@/components/AuthForm';
+"use client";
+
+import { SignIn } from "@clerk/nextjs";
 
 export default function AdminLoginPage() {
   return (
     <div className="flex items-center justify-center min-h-[80vh]">
-      <AuthForm role="admin" />
+      <SignIn path="/admin/login" routing="path" signUpUrl="/admin/register" />
     </div>
   );
 }
